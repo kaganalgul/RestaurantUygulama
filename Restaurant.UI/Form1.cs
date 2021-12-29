@@ -29,7 +29,7 @@ namespace Restaurant.UI
 
         private void btnRezervasyonOnay_Click(object sender, EventArgs e)
         {
-            CustomerFactory.GetFactory().CreateNewCustomerReservation(txtAd.Text, dtpRezervasyonSaati.Value.ToString(), cboBosMasalar.SelectedIndex);
+            CustomerFactory.GetInstance().CreateNewCustomerReservation(txtAd.Text);
 
             MessageBox.Show($"{cboBosMasalar.SelectedIndex + 1} numaralı masa için rezervasyonunuz {dtpRezervasyonSaati.Value} saatine başarıyla yapılmıştır.");
             ListEmptyTables();
@@ -38,7 +38,7 @@ namespace Restaurant.UI
         
         private void ListEmptyTables()
         {
-            cboBosMasalar.DataSource = EmptyTableLister.GetFactory().GetEmptyTables();
+            cboBosMasalar.DataSource = EmptyTableLister.GetInstance().GetEmptyTables();
         }
     }
 }

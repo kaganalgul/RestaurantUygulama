@@ -9,9 +9,6 @@ namespace RestaurantApi.CQRS.Commands.Request
     {
         public string FullName { get; set; }
 
-        public Table Table { get; set; }
-        public int TableId { get; set; }
-
-        public string ReservationTime { get; set; }
+        public Guid ReservationId { get; set; }
     }
 }

@@ -8,10 +8,8 @@ namespace RestaurantApi.Models.Entity
 
         public string FullName { get; set; }
 
-        public string ReservationTime { get; set; }
+        public Reservation Reservation { get; set; }
 
-        public Table Table { get; set; }
-
-        public int TableId { get; set; }
+        public Guid ReservationId { get; set; }
     }
 }

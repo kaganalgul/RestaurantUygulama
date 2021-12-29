@@ -24,13 +24,9 @@ namespace RestaurantApi.CQRS.Handlers.CommandHandlers
             _db.Customers.Add(new Customer()
             { 
                 Id = id,
-                FullName = request.FullName,
-                ReservationTime = $"{DateTime.Now.Date.ToString("dd/MM/yyyy")} {request.ReservationTime}",
-                TableId = request.TableId
+                FullName = request.FullName
             });
-
-            Table table = _db.Tables.Find(request.TableId);
-            table.IsEmpty = false;
+            
 
             await _db.SaveChangesAsync();
 

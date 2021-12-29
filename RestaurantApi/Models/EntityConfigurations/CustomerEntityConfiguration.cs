@@ -10,9 +10,7 @@ namespace RestaurantApi.Models.EntityConfigurations
         {
             builder.HasKey(x => x.Id);
 
-            builder.Property(x => x.ReservationTime).HasDefaultValueSql("getutcdate()");
-
-            builder.HasOne(x => x.Table).WithOne(x => x.Customer).HasForeignKey<Customer>(x => x.TableId);
+            builder.HasOne(x => x.Reservation).WithOne(x => x.Customer).HasForeignKey<Customer>(x => x.ReservationId);
         }
     }
 }

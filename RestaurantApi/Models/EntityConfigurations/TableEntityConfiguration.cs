@@ -12,7 +12,7 @@ namespace RestaurantApi.Models.EntityConfigurations
 
             builder.Property(x => x.IsEmpty).HasDefaultValueSql("true");
 
-            builder.HasOne(x => x.Customer).WithOne(x => x.Table).HasForeignKey<Table>(x => x.CustomerId);
+            builder.HasOne(x => x.Reservation).WithOne(x => x.Table).HasForeignKey<Table>(x => x.ReservationId);
         }
     }
 }

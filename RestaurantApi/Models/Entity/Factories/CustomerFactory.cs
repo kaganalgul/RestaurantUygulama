@@ -20,7 +20,7 @@ namespace RestaurantApi.Models.Entity.Factories
             _client.BaseAddress = new Uri("https://localhost:44325/api/Reservation");
         }
 
-        public static CustomerFactory GetFactory()
+        public static CustomerFactory GetInstance()
         {
             if (_customerFactory is null)
             {
@@ -30,7 +30,7 @@ namespace RestaurantApi.Models.Entity.Factories
             return _customerFactory;
         }
 
-        public string CreateNewCustomerReservation(string fullName, string dateTime, int tableId)
+        public string CreateNewCustomerReservation(string fullName)
         {
             var responseTask = _client.GetAsync("/Create_Customer");
             responseTask.Wait();
@@ -40,8 +40,6 @@ namespace RestaurantApi.Models.Entity.Factories
             CreateCustomerCommandRequest c = new CreateCustomerCommandRequest();
 
             c.FullName = fullName;
-            c.ReservationTime = dateTime;
-            c.TableId = tableId;
 
             string json = JsonConvert.SerializeObject(c);
 

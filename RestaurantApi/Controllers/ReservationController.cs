@@ -39,13 +39,5 @@ namespace RestaurantApi.Controllers
             CreateCustomerCommandResponse response = await _mediator.Send(requestModel);
             return Ok(response);
         }
-
-        [HttpDelete]
-        [Route("/Delete_Customer")]
-        public async Task<IActionResult> Delete([FromQuery]DeleteCustomerCommandRequest requestModel)
-        {
-            DeleteCustomerCommandResponse response = await _mediator.Send(requestModel);
-            return Ok(response);
-        }
     }
 }

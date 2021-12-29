@@ -8,8 +8,8 @@ namespace RestaurantApi.Models.Entity
 
         public bool IsEmpty { get; set; } = true;
 
-        public int? CustomerId { get; set; }
+        public Reservation Reservation { get; set; }
 
-        public Customer Customer { get; set; }
+        public Guid ReservationId { get; set; }
     }
 }

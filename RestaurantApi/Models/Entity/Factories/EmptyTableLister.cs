@@ -21,7 +21,7 @@ namespace RestaurantApi.Models.Entity.Factories
             _client.BaseAddress = new Uri("https://localhost:44325/api/Reservation");
         }
 
-        public static EmptyTableLister GetFactory()
+        public static EmptyTableLister GetInstance()
         {
             if (_tableFactory is null)
             {
